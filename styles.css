@@ -272,6 +272,12 @@ body {
   border-radius: 20px;
 }
 
+/* Transparent hero screenshot (no frame background) */
+.screenshot-frame.hero-plain {
+  background: transparent;
+  padding: 0;
+}
+
 .screenshot-row {
   display: flex;
   gap: 12px;
