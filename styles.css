@@ -117,6 +117,15 @@ body {
   box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
 }
 
+/* Real app icon in header */
+.logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px; /* subtle squircle feel */
+  display: block;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.4);
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
