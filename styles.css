@@ -3,6 +3,8 @@
   --bg-alt: #0c1122;
   --card-bg: #10172f;
   --accent: #3fb5ff;
+  --accent-flag: #f59e0b; /* amber */
+  --accent-capital: #a78bfa; /* violet */
   --accent-soft: rgba(63, 181, 255, 0.14);
   --text: #f7f7ff;
   --muted: #9ca3c7;
@@ -194,6 +196,34 @@ body {
 .hero h1 {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   margin: 0 0 16px;
+}
+
+/* Animated swap word in hero */
+.swap-word {
+  display: inline-block;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.accent-map { color: var(--accent); }
+.accent-flag { color: var(--accent-flag); }
+.accent-capital { color: var(--accent-capital); }
+
+.swap-word.anim-out { animation: wordOut 280ms ease forwards; }
+.swap-word.anim-in { animation: wordIn 280ms ease forwards; }
+
+@keyframes wordOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-0.45em); }
+}
+
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(0.45em); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swap-word.anim-out, .swap-word.anim-in { animation: none; }
 }
 
 .hero-lead {

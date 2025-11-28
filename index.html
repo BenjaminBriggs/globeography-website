@@ -41,7 +41,7 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <h1>Learn the world, one map at a time.</h1>
+        <h1>Learn the world, one <span id="swap-word" class="swap-word accent-map">map</span> at a time.</h1>
         <p class="hero-lead">
           Globeography turns geography practice into a fast, satisfying game. 
           Spot flags, match capitals, and fill in country outlines on a clean, modern map.
@@ -181,6 +181,41 @@
 <script>
   // Simple current-year helper
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero word swapper
+  (function() {
+    const el = document.getElementById('swap-word');
+    if (!el) return;
+    const items = [
+      { text: 'map', cls: 'accent-map' },
+      { text: 'flag', cls: 'accent-flag' },
+      { text: 'capital city', cls: 'accent-capital' }
+    ];
+    let i = 0;
+
+    function next() {
+      // animate out
+      el.classList.add('anim-out');
+      el.addEventListener('animationend', function handleOut() {
+        el.removeEventListener('animationend', handleOut);
+        // update index/text/color
+        i = (i + 1) % items.length;
+        el.textContent = items[i].text;
+        el.className = 'swap-word ' + items[i].cls; // reset classes
+        // animate in
+        el.classList.add('anim-in');
+        el.addEventListener('animationend', function handleIn() {
+          el.removeEventListener('animationend', handleIn);
+          el.classList.remove('anim-in');
+        }, { once: true });
+      });
+    }
+
+    let timer = setInterval(next, 2400);
+    // be polite: pause on hover/focus
+    ['mouseenter','focusin'].forEach(evt => el.addEventListener(evt, () => { clearInterval(timer); }));
+    ['mouseleave','focusout'].forEach(evt => el.addEventListener(evt, () => { timer = setInterval(next, 2400); }));
+  })();
 </script>
 </body>
 </html>
