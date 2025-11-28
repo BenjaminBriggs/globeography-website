@@ -276,6 +276,12 @@ body {
 .screenshot-frame.hero-plain {
   background: transparent;
   padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.screenshot-frame.hero-plain img {
+  border-radius: 0;
 }
 
 .screenshot-row {
