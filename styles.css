@@ -231,6 +231,17 @@ body {
   box-shadow: 0 22px 45px rgba(15, 23, 42, 0.75);
 }
 
+/* App Store badge (use official asset; no styling that alters it) */
+.appstore-badge {
+  display: inline-block;
+  line-height: 0;
+}
+
+.appstore-badge img {
+  height: 44px;
+  width: auto;
+}
+
 /* Screenshots */
 
 .hero-media {
