@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page Not Found – Globeography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-simple">
+<header class="site-header simple">
+  <div class="container header-inner">
+    <a href="/" class="brand-link">Globeography</a>
+  </div>
+</header>
+
+<main class="simple-main container">
+  <h1>Page not found</h1>
+  <p>Sorry, we couldn’t find that page.</p>
+  <p>
+    <a class="btn primary" href="/">Return to homepage</a>
+  </p>
+</main>
+
+<footer class="site-footer simple">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Globeography</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Netlify will serve this page for 404s automatically
+  // https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page
+  
+</script>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# If you add a sitemap later, uncomment and update:
+# Sitemap: https://globeography.com/sitemap.xml
+
