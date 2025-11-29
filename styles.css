@@ -12,8 +12,8 @@
   --radius-lg: 18px;
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
   --max-width: 1080px;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  --font-sans: "Open Runde", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
 }
 
 *,
@@ -33,6 +33,16 @@ body {
   background: radial-gradient(circle at top, #131c3a 0, #050814 55%);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Open Runde (variable) – place fonts at assets/fonts/OpenRunde-Variable.woff2 */
+@font-face {
+  font-family: "Open Runde";
+  src: url("assets/fonts/OpenRunde-Variable.woff2") format("woff2-variations"),
+       url("assets/fonts/OpenRunde-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Layout helpers */
